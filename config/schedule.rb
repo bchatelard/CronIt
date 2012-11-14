@@ -7,7 +7,7 @@ Dir["scripts/*.rb"].each do |file|
   require file
   name = File.basename(file).split('.')[0].camelize
   every = eval(name + "._every")
-  job_type name.to_sym, "cd :path && ruby -r :task -e #{name}._run"
+  job_type name.to_sym, "cd :path &> /dev/null && ruby -r :task -e #{name}._run"
   jobs << {:name => name, :file => file, :every => every}
 end
 

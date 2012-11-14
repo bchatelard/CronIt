@@ -1,7 +1,7 @@
 require 'active_support/time'
 
 
-class PlanIt
+class CronIt
   def self._every
     @every || []
   end

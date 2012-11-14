@@ -6,7 +6,7 @@ require 'time'
 
 TIME = 5.minutes
 
-class GithubDeamon < PlanIt
+class GithubDeamon < CronIt
   every TIME
   run :launch
 
